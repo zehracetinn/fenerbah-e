@@ -10,7 +10,7 @@
       margin: 0;
       padding-top: 100px;
       color: white;
-      background: url('https://img.a.transfermarkt.technology/diashow/bilder/normal/352985-1584536310.jpg?lm=1') no-repeat center center fixed;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Fenerbah%C3%A7e_S.K._flag.png/1024px-Fenerbah%C3%A7e_S.K._flag.png') no-repeat center center fixed;
       background-size: cover;
     }
     #background-arma {
@@ -29,7 +29,7 @@
       z-index: 1;
       position: relative;
     }
-    h1, label, h2 {
+    h1 {
       position: relative;
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.5);
@@ -37,6 +37,12 @@
       padding: 10px 20px;
       border-radius: 8px;
       margin: 10px auto;
+      font-size: 24px;
+    }
+    #buttons {
+      margin-top: 20px;
+      z-index: 1;
+      position: relative;
     }
     button {
       font-size: 18px;
@@ -50,18 +56,14 @@
     button:first-of-type {
       background-color: #4CAF50;
     }
-    label {
-      font-size: 18px;
-      margin-left: 20px;
-    }
     .hayirButton {
       background-color: #f44336;
-      font-size: 18px;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 14px;
-      color: white;
-      margin-left: 10px;
+    }
+    h2 {
+      position: relative;
+      z-index: 1;
+      margin-top: 20px;
+      font-size: 22px;
     }
   </style>
 </head>
@@ -69,14 +71,17 @@
   <img id="background-arma" src="https://upload.wikimedia.org/wikipedia/tr/thumb/3/3b/Fenerbah%C3%A7e_SK.png/600px-Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Arka Plan Arması">
   <img id="arma" src="https://upload.wikimedia.org/wikipedia/tr/thumb/3/3b/Fenerbah%C3%A7e_SK.png/600px-Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Arması">
   <h1>Fenerbahçe şampiyon olur mu seneye?</h1>
-  <button onclick="showMessage()">Evet</button>
-  <button class="hayirButton" onmouseover="kacir()">Hayır</button>
+  <div id="buttons">
+    <button onclick="showMessage()">Evet</button>
+    <button class="hayirButton" onmouseover="kacir()">Hayır</button>
+  </div>
   <input type="checkbox" id="kacacakCheckbox" style="visibility: hidden;">
 
   <h2 id="sonuc"></h2>
 
   <script>
     function showMessage() {
+      alert("Ben de seni seviyorum! ❤️");
       document.getElementById("sonuc").innerText = "ŞAMPİYON OSMANGÜCÜ";
     }
 
