@@ -10,23 +10,11 @@
       margin: 0;
       padding-top: 100px;
       color: white;
-      background: repeating-linear-gradient(
-        to right,
-        navy,
-        navy 60px,
-        yellow 60px,
-        yellow 120px
-      );
+      background: url('https://img.a.transfermarkt.technology/diashow/bilder/normal/352985-1584536310.jpg?lm=1') no-repeat center center fixed;
+      background-size: cover;
     }
     #background-arma {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.06;
-      z-index: 0;
-      width: 60%;
-      max-width: 700px;
+      display: none;
     }
     #kacacakCheckbox {
       position: absolute;
@@ -41,26 +29,39 @@
       z-index: 1;
       position: relative;
     }
-    h1, button, label, h2 {
+    h1, label, h2 {
       position: relative;
       z-index: 1;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.5);
       display: inline-block;
       padding: 10px 20px;
       border-radius: 8px;
       margin: 10px auto;
     }
     button {
-      font-size: 16px;
-      padding: 8px 16px;
+      font-size: 18px;
+      padding: 12px 24px;
+      margin: 10px;
       border: none;
-      border-radius: 6px;
-      background-color: white;
-      color: navy;
+      border-radius: 14px;
+      color: white;
       cursor: pointer;
     }
+    button:first-of-type {
+      background-color: #4CAF50;
+    }
     label {
-      font-size: 16px;
+      font-size: 18px;
+      margin-left: 20px;
+    }
+    .hayirButton {
+      background-color: #f44336;
+      font-size: 18px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      margin-left: 10px;
     }
   </style>
 </head>
@@ -69,9 +70,8 @@
   <img id="arma" src="https://upload.wikimedia.org/wikipedia/tr/thumb/3/3b/Fenerbah%C3%A7e_SK.png/600px-Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Arması">
   <h1>Fenerbahçe şampiyon olur mu seneye?</h1>
   <button onclick="showMessage()">Evet</button>
-  <label>
-    <input type="checkbox" id="kacacakCheckbox" onmouseover="kacir()"> Hayır
-  </label>
+  <button class="hayirButton" onmouseover="kacir()">Hayır</button>
+  <input type="checkbox" id="kacacakCheckbox" style="visibility: hidden;">
 
   <h2 id="sonuc"></h2>
 
@@ -82,10 +82,12 @@
 
     function kacir() {
       const checkbox = document.getElementById("kacacakCheckbox");
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 100);
-      checkbox.style.left = x + "px";
-      checkbox.style.top = y + "px";
+      const hayirBtn = document.querySelector(".hayirButton");
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 60);
+      hayirBtn.style.position = "absolute";
+      hayirBtn.style.left = x + "px";
+      hayirBtn.style.top = y + "px";
     }
   </script>
 </body>
