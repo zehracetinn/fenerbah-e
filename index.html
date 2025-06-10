@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fenerbahçe Şampiyon Olur mu?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 100px;
+      color: white;
+      background: repeating-linear-gradient(
+        45deg,
+        navy,
+        navy 20px,
+        yellow 20px,
+        yellow 40px
+      );
+    }
+    #background-arma {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.08;
+      z-index: 0;
+      width: 70%;
+      max-width: 800px;
+    }
+    #kacacakCheckbox {
+      position: absolute;
+      z-index: 1;
+    }
+    #arma {
+      width: 150px;
+      margin-bottom: 20px;
+      z-index: 1;
+      position: relative;
+    }
+    h1, button, label, h2 {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <img id="background-arma" src="https://upload.wikimedia.org/wikipedia/tr/thumb/3/3b/Fenerbah%C3%A7e_SK.png/600px-Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Arka Plan Arması">
+  <img id="arma" src="https://upload.wikimedia.org/wikipedia/tr/thumb/3/3b/Fenerbah%C3%A7e_SK.png/600px-Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Arması">
+  <h1>Fenerbahçe şampiyon olur mu seneye?</h1>
+  <button onclick="showMessage()">Evet</button>
+  <label>
+    <input type="checkbox" id="kacacakCheckbox" onmouseover="kacir()"> Hayır
+  </label>
+
+  <h2 id="sonuc"></h2>
+
+  <script>
+    function showMessage() {
+      document.getElementById("sonuc").innerText = "ŞAMPİYON OSMANGÜCÜ";
+    }
+
+    function kacir() {
+      const checkbox = document.getElementById("kacacakCheckbox");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      checkbox.style.left = x + "px";
+      checkbox.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
